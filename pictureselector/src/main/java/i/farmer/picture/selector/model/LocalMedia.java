@@ -10,6 +10,7 @@ import android.os.Parcelable;
  */
 public class LocalMedia implements Parcelable, ILocalMedia {
     private long id;                // 文件id
+    private long bucketId;          // 目录id
     private String path;            // 原路径
     private long duration;          // 视频长度
     private String mimeType;        // 文件类型
@@ -26,8 +27,26 @@ public class LocalMedia implements Parcelable, ILocalMedia {
     private boolean isOriginal;     // 是否被选中了原图
     public boolean isLongImage;     // 是否是长图
 
+    public LocalMedia(long id, String path, String fileName, String parentFolderName, long duration,
+                      String mimeType, int width, int height, long size, long bucketId) {
+        this.id = id;
+        this.bucketId = bucketId;
+        this.path = path;
+        this.duration = duration;
+        this.mimeType = mimeType;
+        this.width = width;
+        this.height = height;
+        this.size = size;
+        this.fileName = fileName;
+        this.parentFolderName = parentFolderName;
+    }
+
     public long getId() {
         return id;
+    }
+
+    public long getBucketId() {
+        return bucketId;
     }
 
     public long getDuration() {
@@ -107,6 +126,7 @@ public class LocalMedia implements Parcelable, ILocalMedia {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeLong(id);
+        dest.writeLong(bucketId);
         dest.writeString(path);
         dest.writeLong(duration);
         dest.writeString(mimeType);
@@ -124,6 +144,7 @@ public class LocalMedia implements Parcelable, ILocalMedia {
 
     public LocalMedia(Parcel in) {
         id = in.readLong();
+        bucketId = in.readLong();
         path = in.readString();
         duration = in.readLong();
         mimeType = in.readString();

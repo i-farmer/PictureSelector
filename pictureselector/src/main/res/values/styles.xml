@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="PsBaseRoot" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="actionBarSize">@dimen/x88</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+    <attr name="colorPrimary_pressed" format="color" />
+    <attr name="colorPrimary_enabled" format="color" />
+
+    <style name="PsBase" parent="PsBaseRoot">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/ps_colorPrimary</item>
+        <item name="colorPrimary_pressed">@color/ps_colorPrimary_pressed</item>
+        <item name="colorPrimary_enabled">@color/ps_colorPrimary_enabled</item>
+        <item name="colorPrimaryDark">@color/ps_colorPrimary</item>
+        <item name="colorAccent">@color/ps_colorPrimary</item>
+    </style>
+
+    <style name="PictureSelectorTheme" parent="PsBase" />
+</resources>

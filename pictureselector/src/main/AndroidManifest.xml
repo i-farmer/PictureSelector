@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="i.farmer.picture.selector">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="i.farmer.picture.selector">
 
+    <application>
+        <activity
+            android:name=".ui.activity.GalleryActivity"
+            android:theme="@style/PictureSelectorTheme" />
+    </application>
 </manifest>

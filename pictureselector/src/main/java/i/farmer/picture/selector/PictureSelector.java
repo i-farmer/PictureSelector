@@ -1,5 +1,12 @@
 package i.farmer.picture.selector;
 
+import android.app.Activity;
+import android.content.Intent;
+
+import androidx.fragment.app.Fragment;
+
+import i.farmer.picture.selector.ui.activity.GalleryActivity;
+
 /**
  * @author i-farmer
  * @created-time 2021/4/29 3:59 下午
@@ -11,15 +18,47 @@ public class PictureSelector {
     /**
      * 打开相册
      */
-    public void openGallery(OnSelectCallback callback) {
+    public void openGallery(Activity activity, OnSelectCallback callback) {
+        this.callback = callback;
+        Intent intent = new Intent(activity, GalleryActivity.class);
+        activity.startActivityForResult(intent, PictureSelectorConfig.REQUEST_CHOOSE);
+    }
+
+    /**
+     * 打开相机
+     */
+    public void openGallery(Fragment fragment, OnSelectCallback callback) {
         this.callback = callback;
     }
 
     /**
      * 打开相机
      */
-    public void openCamera(OnSelectCallback callback) {
+    public void openCamera(Activity activity, OnSelectCallback callback) {
         this.callback = callback;
+    }
+
+    /**
+     * 打开相机
+     */
+    public void openCamera(Fragment fragment, OnSelectCallback callback) {
+        this.callback = callback;
+    }
+
+    /**
+     * 请求结果
+     *
+     * @param requestCode
+     * @param data
+     */
+    public void onResult(int requestCode, Intent data) {
+        if (null == callback) {
+            return;
+        }
+        if (null == data) {
+            callback.onSelectResult(null);
+            return;
+        }
     }
 
     //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 单例定义 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>

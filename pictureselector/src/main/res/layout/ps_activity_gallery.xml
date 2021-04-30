@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mRootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/mToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Space
+            android:id="@+id/mStatusBar"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+        <ImageButton
+            android:id="@+id/mBackButton"
+            android:layout_width="wrap_content"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_below="@id/mStatusBar"
+            android:background="@android:color/transparent"
+            android:paddingHorizontal="@dimen/x32"
+            android:scaleType="centerInside"
+            android:src="@drawable/ps_icon_back" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignTop="@id/mBackButton"
+            android:layout_alignBottom="@id/mBackButton"
+            android:layout_centerHorizontal="true"
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/x12">
+
+            <TextView
+                android:id="@+id/mTitleView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/x32"
+                android:textStyle="bold" />
+
+            <View
+                android:id="@+id/mArrowIcon"
+                android:layout_width="@dimen/x24"
+                android:layout_height="@dimen/x15"
+                android:layout_marginLeft="@dimen/x12"
+                android:layout_marginTop="@dimen/x2"
+                android:background="@drawable/ps_icon_arrow" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <RelativeLayout
+        android:id="@+id/mBottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <TextView
+            android:id="@+id/mPreviewButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/x32"
+            android:text="预览"
+            android:textSize="@dimen/x28" />
+
+        <CheckBox
+            android:id="@+id/mOriginalButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:checked="false"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/x12"
+            android:text="原图"
+            android:textSize="@dimen/x28" />
+
+        <LinearLayout
+            android:id="@+id/mOkButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/x32">
+
+            <TextView
+                android:id="@+id/mOkCountView"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/x32"
+                android:layout_marginRight="@dimen/x6"
+                android:background="@drawable/ps_bg_count"
+                android:gravity="center"
+                android:minWidth="@dimen/x32"
+                android:paddingHorizontal="@dimen/x8"
+                android:text="1"
+                android:textSize="@dimen/x24" />
+
+            <TextView
+                android:id="@+id/mOkLabelView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="请选择"
+                android:textColor="@color/ps_color_button_primary"
+                android:textSize="@dimen/x24" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

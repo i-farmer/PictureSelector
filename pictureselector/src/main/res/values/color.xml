@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ps_colorPrimary">#FF7423</color>
+    <color name="ps_colorPrimary_pressed">#99FF7423</color>
+    <color name="ps_colorPrimary_enabled">#33FF7423</color>
+    <color name="ps_lightColor">#FFFFFF</color>
+    <color name="ps_lightColor_pressed">#99FFFFFF</color>
+    <color name="ps_lightColor_enabled">#33FFFFFF</color>
+    <color name="ps_darkColor">#1A1A1A</color>
+    <color name="ps_darkColor_pressed">#991A1A1A</color>
+    <color name="ps_darkColor_enabled">#331A1A1A</color>
+</resources>
